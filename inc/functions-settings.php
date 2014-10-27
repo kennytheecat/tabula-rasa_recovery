@@ -154,6 +154,10 @@ add_filter('excerpt_more', 'tr_excerpt_more');
 POST THUMBNAILS
 **************************************************************/
 //add_image_size( $name, $width, $height, $crop );
+set_post_thumbnail_size(125, 125, true);
+add_image_size( 'prescott_news', 125, 125, true ); //300 pixels wide (and unlimited height)
+add_image_size( 'recent_recovery', 400, 150, true ); //(cropped)
+add_image_size( 'compare', 240, 150, true ); //(cropped)
 
 /*************************************************************
 MISC

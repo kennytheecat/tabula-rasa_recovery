@@ -9,17 +9,23 @@
 		.height(450px);
 		background-size: cover;
 		
+			.margin(2px, auto);
+		
 		.call_to_action_text {
 			.wrap;
 			text-align: center;
 			color: #fff;
 			font-family: @sans-serif;
+			.padding-top(120px);
 			
-			p {
-				.font-size(20px);
-				
+			h1 {
+				.font-size(25px);
+				width: 75%;
+				margin: 0 auto 0;
+				text-shadow: 1px 1px 5px black;
 			}
 			h2 {
+				.padding-top(20px);
 				.font-size(30px);
 				a {
 					background: @sec-color;
@@ -28,7 +34,28 @@
 					.border-radius(10px);
 					border: 1px solid @white;
 					box-shadow: 6px 15px 15px -12px @black;
+					
+					&:hover {
+						background: darken(@sec-color, 9%);
+					}
 				}
+			}
+		}
+	}
+	.blurb-wrapper {
+		background: @sec-color;
+		.padding(20px);
+		
+		.blurb {
+			.wrap;
+			
+			p {
+				.font-size(22px);
+				width: 75%;
+				margin: auto;
+				text-align: center;
+				color: @white;
+				text-shadow: 1px 1px 1px black;
 			}
 		}
 	}
@@ -37,17 +64,24 @@
 		width: 100%;
 		float: none;
 		display: block;
-		
+		margin-right: auto!important;
 	}
-	.news_prescott {
-		.column(5);
-	}
+	.news_prescott,
 	.news_recovery {
 		.column(5);
+		
+		h2 {
+
+		}
 	}
-	.advert {
+	.advert-title {
 		.column(2);
 		margin-right: 0px;
+		
+		.advert {
+			border: 1px dashed @grey;
+			.height(400px);
+		}
 	}
 }
 

@@ -6,47 +6,55 @@ get_header();
 ?>
 	<div class="call_to_action">
 		<div class="call_to_action_text">
-			<p>Prescott Recovery Centers provides detailed information about all the rehab and treatment facilities in Prescott, Arizona.</p>
-			<p>This is your first stop on your road to recovery.</p>
+			<h1>Your first stop on the road to recovery</h1>
 			<h2>
 				<a href="<?php echo home_url(); ?>/at-a-glance">Search for the Best Rehab Centers in Prescott, AZ</a></h2>
 		</div>
 	</div>
+	<div class="blurb-wrapper">
+		<div class="blurb">
+			<p>Prescott Recovery Centers provides detailed information about every rehab and treatment facilities in Prescott, Arizona.</p>
+		</div>
+	</div>
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<main id="main" class="site-main" role="main">
 			<div class="news_prescott">
 				<h2>Recent Recovery News in Prescott</h2>
-<?php $prescott_news = new WP_Query('cat=110'); // exclude category 9
-while($prescott_news->have_posts()) : $prescott_news->the_post(); ?>
-
-	<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		<div class="entry-thumbnail">
-			<?php the_post_thumbnail('prescott_news'); ?>
-		</div>
-		<?php the_excerpt(); ?>
-	</div>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); // reset the query ?>				
+				<?php 
+				$prescott_news = new WP_Query('cat=103'); // exclude category 9
+				while($prescott_news->have_posts()) : $prescott_news->the_post(); 
+				?>
+				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					<div class="entry-thumbnail">
+						<?php the_post_thumbnail('prescott_news'); ?>
+					</div>
+					<?php the_excerpt(); ?>
+				</div>
+			<?php endwhile; ?>
+			<?php wp_reset_postdata(); // reset the query ?>				
 			</div>
 			<div class="news_recovery">
 				<h2>Recent Recovery News</h2>
-<?php $recent_recovery = new WP_Query('cat=109'); // exclude category 9
-while($recent_recovery->have_posts()) : $recent_recovery->the_post(); ?>
-
-	<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		<div class="entry-thumbnail">
-			<?php the_post_thumbnail('recent_recovery'); ?>
-		</div>
-		<?php the_excerpt(); ?>
-	</div>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); // reset the query ?>					
+				<?php 
+				$recent_recovery = new WP_Query('cat=104'); // exclude category 9
+				while($recent_recovery->have_posts()) : $recent_recovery->the_post(); 
+				?>
+				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					<div class="entry-thumbnail">
+						<?php the_post_thumbnail('recent_recovery'); ?>
+					</div>
+					<?php the_excerpt(); ?>
+				</div>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); // reset the query ?>					
 			</div>
-			<div class="advert">
-				<h2></h2>
+			<div class="advert-title">
+				<h2>Advert</h2>
+				<div class="advert">
+				</div>
 			</div>			
-		</div><!-- #content -->
-	</div><!-- #primary -->			
+		</main><!-- #main -->
+	</div><!-- #primary -->
 <?php get_footer(); ?>

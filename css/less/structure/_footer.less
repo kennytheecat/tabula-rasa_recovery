@@ -19,3 +19,57 @@ footer#colophon .site-footer
 		}
 	}
 }
+
+/** Breakpoint - 600 **/
+@media only screen and (min-width: 600px) {
+	.site-footer {
+		
+		.inner-footer {
+		}
+		.rehab_list {
+			overflow: hidden;
+			.padding-bottom(10px);
+		}	
+		
+		ul {
+			.column(3);
+			padding: 0;
+			.padding-top(10px);
+			.padding-left(10px);
+			
+			li {
+				list-style: none;
+				.text-indent(-10px);
+			
+				a {
+					color: @white;
+					text-decoration: none;
+					.font-size(14px);
+					
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				&:first-child {}
+				&:last-child {}
+			}
+		}	
+		.site-info {
+			clear: both;
+			color: @white;
+			border-top: 1px solid @white;
+			text-align: right;
+			.padding-top(10px);
+			
+			a { 
+				color: @white;
+				text-align: right;
+				text-decoration: none;
+				
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
