@@ -1,6 +1,55 @@
 /** Home 
 -------------------------------------------------------------- */
-.home {}
+.home {
+	.site-content {
+		max-width: 100%;
+	}
+	.call_to_action {
+		background: url("../images/roadtorecovery.jpg");
+		.height(450px);
+		background-size: cover;
+		
+		.call_to_action_text {
+			.wrap;
+			text-align: center;
+			color: #fff;
+			font-family: @sans-serif;
+			
+			p {
+				.font-size(20px);
+				
+			}
+			h2 {
+				.font-size(30px);
+				a {
+					background: @sec-color;
+					color: @white;
+					.padding(10px, 25px);
+					.border-radius(10px);
+					border: 1px solid @white;
+					box-shadow: 6px 15px 15px -12px @black;
+				}
+			}
+		}
+	}
+	.content-area {
+		.wrap;
+		width: 100%;
+		float: none;
+		display: block;
+		
+	}
+	.news_prescott {
+		.column(5);
+	}
+	.news_recovery {
+		.column(5);
+	}
+	.advert {
+		.column(2);
+		margin-right: 0px;
+	}
+}
 
 /** Archives
 -------------------------------------------------------------- */

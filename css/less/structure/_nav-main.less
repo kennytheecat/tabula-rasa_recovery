@@ -93,20 +93,44 @@
 /** Breakpoint - 600 **/
 @media only screen and (min-width: 600px) {
 	.main-navigation {
-		.margin-top(20px);
+		width: 70%;
+		text-align: right;
 		display: inline-block;
-		width: 100%;
-		border-top: 2px solid @grey;
-		border-bottom: 2px solid @grey;	
 		
 		.mmenu-toggle {
 			.height(44px);
 			display: inline;
 		}
 		.nav-menu {
-			display: inline-block;
-			float: left;
 			width: auto;
+			display: inline-block;
+			
+			a {
+				color: @white;
+				font-weight: normal;
+				.font-size(12px);
+				text-transform: uppercase;
+				
+				&:hover {
+					background: inherit;
+					color: @white;
+				}
+			}		
+		}
+		.nav-alert {
+			background: @sec-color;
+			.height(70px);
+			.margin-top(-15px);
+			border: 1px solid #000;
+			.padding(5px);
+			
+			a {
+				.margin-top(-10px);
+				border: 1px dashed @white;
+				.border-radius(5px);
+				.height(70px);
+				.padding-top(30px);
+			}
 		}
 		.search-not-mobile {
 			display: inline-block;

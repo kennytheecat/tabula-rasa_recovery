@@ -52,7 +52,7 @@ function tr_scripts_and_styles() {
 	global $post;
 	
 	// FONTS
-  wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=PT+Serif|Open+Sans:400,700|Open+Sans+Condensed:700' );
+  wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:700' );
   wp_enqueue_style( 'font-awesome',  'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');		
   
 	if (!is_admin()) {
@@ -113,7 +113,7 @@ INCLUDES
 **************************************************************/
 /** Custom Post Types
 **************************************************************/
-//require_once('custom-post-type.php'); 
+require_once('custom-post-type_rehabs/custom-post-type.php'); 
 
 /** Widgets
 **************************************************************/

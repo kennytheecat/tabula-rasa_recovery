@@ -11,7 +11,9 @@ header#masthead .site-header
 					li 
 						.children
 -------------------------------------------------------------- */
-.site-header {}	
+.site-header {
+	background: @prim-color;
+}	
 .QRprintonly {
 	display:none;
 }
@@ -23,26 +25,29 @@ header#masthead .site-header
 	.site-title {
 		margin: 0;
 		text-align: center;
+		font-family: @serif;
+		.font-size(18px);
 	}
 	.site-description {	
 		display: none;
 	}
 	a {
 		text-decoration: none;
+		color: @white;
 	}	
 }
 
 /** Breakpoint - 600 **/
 @media only screen and (min-width: 600px) {
 	.site-header {
-		.margin-top(20px);
+		.margin-top(15px);
+		.height(45px);
 	}	
 	.site-branding {
-		background: url(../images/buffy-banner.png) no-repeat;
-		.height(150px);
 		.padding(10px);
-		width: 100%;
+		width: 30%;
 		color: @white;
+		
 			
 		.site-title {
 			text-align: left;
