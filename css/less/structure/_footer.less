@@ -9,6 +9,9 @@ footer#colophon .site-footer
 	.inner-footer {
 		.wrap;
 	}
+	.rehab_list {
+		display: none;
+	}		
 	.entry-meta {	}
 	a {}	
 	ul {
@@ -18,6 +21,18 @@ footer#colophon .site-footer
 			&:last-child {}
 		}
 	}
+	.site-info {
+		clear: both;
+		color: @white;
+		text-align: center;
+		.padding(10px, 0);
+		
+		a { 
+			color: @white;
+			text-align: center;
+			text-decoration: none;
+		}
+	}	
 }
 
 /** Breakpoint - 600 **/
@@ -27,6 +42,7 @@ footer#colophon .site-footer
 		.inner-footer {
 		}
 		.rehab_list {
+			display: block;
 			overflow: hidden;
 			.padding-bottom(10px);
 		}	
@@ -55,16 +71,11 @@ footer#colophon .site-footer
 			}
 		}	
 		.site-info {
-			clear: both;
-			color: @white;
 			border-top: 1px solid @white;
 			text-align: right;
-			.padding-top(10px);
 			
 			a { 
-				color: @white;
 				text-align: right;
-				text-decoration: none;
 				
 				&:hover {
 					text-decoration: underline;
