@@ -21,7 +21,7 @@ get_header();
 			<div class="news_prescott">
 				<h2>Recent Recovery News in Prescott</h2>
 				<?php 
-				$prescott_news = new WP_Query('cat=103'); // exclude category 9
+				$prescott_news = new WP_Query('cat=110'); // exclude category 9 103
 				while($prescott_news->have_posts()) : $prescott_news->the_post(); 
 				?>
 				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -37,7 +37,7 @@ get_header();
 			<div class="news_recovery">
 				<h2>Recent Recovery News</h2>
 				<?php 
-				$recent_recovery = new WP_Query('cat=104'); // exclude category 9
+				$recent_recovery = new WP_Query('cat=109'); // exclude category 9 109
 				while($recent_recovery->have_posts()) : $recent_recovery->the_post(); 
 				?>
 				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -50,9 +50,10 @@ get_header();
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); // reset the query ?>					
 			</div>
-			<div class="advert-title">
+			<div class="advert-section">
 				<h2>Advert</h2>
 				<div class="advert">
+					<?php echo $ad_homepage; ?>
 				</div>
 			</div>			
 		</main><!-- #main -->

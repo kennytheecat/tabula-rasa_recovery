@@ -113,7 +113,7 @@ INCLUDES
 **************************************************************/
 /** Custom Post Types
 **************************************************************/
-require_once('custom-post-type_rehabs/custom-post-type.php'); 
+require_once('rehabs/rehab-cpt.php'); 
 
 /** Widgets
 **************************************************************/
@@ -201,7 +201,21 @@ function tr_social_menu() {
 
 /** Google Analytics
 **************************************************************/
-function google_analytics_tracking_code(){ ?>
+function google_analytics_tracking_code(){ 
+	if ( is_front_page() ) {
+?>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- rehabs_homepage -->
+	<ins class="adsbygoogle"
+			 style="display:inline-block;width:120px;height:600px"
+			 data-ad-client="ca-pub-7445595777186624"
+			 data-ad-slot="1706240401"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+<?php 
+	} else {
+?>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -211,8 +225,10 @@ function google_analytics_tracking_code(){ ?>
 		ga('create', 'UA-2432710-6', 'prescott-az.gov');
 		ga('send', 'pageview');
 	</script>
-<?php }	
-add_action('wp_head', 'google_analytics_tracking_code');
+<?php 
+	}	
+}
+//add_action('wp_head', 'google_analytics_tracking_code');
 
 /** Theme Options Data
 **************************************************************/

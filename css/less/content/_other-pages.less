@@ -74,13 +74,13 @@
 
 		}
 	}
-	.advert-title {
+	.advert-section {
 		.column(2);
 		margin-right: 0px;
+		.min-height(650px);
 		
 		.advert {
-			border: 1px dashed @grey;
-			.height(400px);
+			text-align: center;
 		}
 	}
 }
@@ -120,6 +120,71 @@
 		}
 	}	
 }
+
+/** Rehabs - Single
+-------------------------------------------------------------- */
+.single-rehabs {
+	.content-area {
+		width: 100%;
+	}
+	.basicinfo {
+		.column(4);
+		margin-left: 0;
+	}
+	.philosophy {
+		.column(8);
+		margin-right: 0;
+	}
+	.google_advert {
+		.column(4);
+		margin-left: 0;
+		clear: both;
+	}
+	.rvpark_gmap_wrapper {
+		.column(8);
+		margin-right: 0;
+	}
+	.details_wrap {
+		.treatment_details {
+			.column(8);
+			margin-left: 0;
+			clear: both;
+		}
+		.payment_details {
+			.column(4);
+			margin-right: 0;		
+		}
+	}
+	#review_box { display: none;}
+}
+
+/** Rehabs - Archive
+-------------------------------------------------------------- */
+.page-template-page-compare-php {
+	.content-area {
+		width: 100%;
+	}
+	article {
+		clear: both;
+		border: 1px solid #ddd;
+		.border-radius(5px);
+		overflow: hidden;
+		.margin-top(15px);
+		.padding(10px);
+	}
+	.entry-header {
+		.column(3);
+		margin-left: 0;
+	}
+	.philosophy {
+		.column(6);
+	}
+	.residential_options_section {
+		.column(3);
+		margin-right: 0;
+	}	
+}
+
 	
 /** 404
 -------------------------------------------------------------- */
