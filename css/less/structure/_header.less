@@ -45,15 +45,15 @@ header#masthead .site-header
 	.site-branding {
 		.padding-top(10px);
 		width: 30%;
+		width: auto;
 		color: @white;
 		
 			
 		.site-title {
 			text-align: left;
 			.font-size(26px);
-			font-size: 2.6vw;
 			.line-height(20px);
-			.padding-left(10px);
+			.padding-left(10px)
 		}
 		.site-description {	
 			display: block;
@@ -62,15 +62,4 @@ header#masthead .site-header
 			color: @white;
 		}	
 	}
-}
-
-/** Breakpoint - 1000 **/
-@media only screen and (min-width: 1000px) {
-	.site-branding {			
-		.site-title {
-			.font-size(26px);
-			.line-height(20px);
-			padding-left: 0;
-		}
-	}	
 }

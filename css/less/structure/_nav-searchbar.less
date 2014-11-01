@@ -24,6 +24,7 @@ input[type="search"] {
 	width: 100%;
 }
 .search-box {
+	clear: both;
 	.padding(5px);
 	background: @prim-color;
 	
@@ -53,6 +54,13 @@ input[type="search"] {
 		display: inline-block;
 	}
 	.search-box {
-		.padding(5px, 0);	
+		.padding(20px, 10px);	
+	}
+}
+
+/** Breakpoint - 1000 **/
+@media only screen and (min-width: 1000px) {
+	.search-box {
+		.padding(20px, 0);	
 	}
 }
