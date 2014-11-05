@@ -6,37 +6,36 @@
 	}
 	.call_to_action {
 		background: url("../images/roadtorecovery.jpg");
-		.height(450px);
 		background-size: cover;
 		.margin(2px, auto);
+		.height(250px);
 		
 		.call_to_action_text {
-			.wrap;
 			text-align: center;
 			color: #fff;
 			font-family: @sans-serif;
-			.padding-top(120px);
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
 			
 			h1 {
-				.font-size(25px);
+				.font-size(20px);
 				width: 75%;
 				margin: 0 auto 0;
 				text-shadow: 1px 1px 5px black;
 			}
 			h2 {
-				.padding-top(20px);
-				.font-size(30px);
+				.font-size(20px);
+				border: none;
+				
 				a {
 					background: @sec-color;
 					color: @white;
-					.padding(10px, 25px);
 					.border-radius(10px);
-					border: 1px solid @white;
-					box-shadow: 6px 15px 15px -12px @black;
-					
-					&:hover {
-						background: darken(@sec-color, 9%);
-					}
+					border: 2px solid @white;
+					display: inline-block;
+					.padding(10px, 40px);
+					.margin(20px, 10px);
 				}
 			}
 		}
@@ -64,25 +63,106 @@
 		float: none;
 		display: block;
 		margin-right: auto!important;
+		.padding(10px);
 	}
 	.news_prescott,
-	.news_recovery {
-		.column(5);
-		
-		h2 {
+	.advert-section {
+		display: none;
+	}
+}
 
+/** Breakpoint - 600 **/
+@media only screen and (min-width: 600px) {
+	.home {
+		.call_to_action {
+			.height(350px);
+			
+			.call_to_action_text {
+				.wrap;
+				.padding-top(60px);
+				
+				h1 {
+					.font-size(25px);
+				}
+				h2 {
+					.padding-top(20px);
+					.font-size(30px);
+					
+					a {						
+						.padding(10px, 25px);
+						box-shadow: 6px 15px 15px -12px @black;
+						
+						&:hover {
+							background: darken(@sec-color, 9%);
+						}
+					}
+				}
+			}
+		}	
+		.blurb-wrapper {
+			.blurb {
+				p {
+					.font-size(24px);
+					width: 90%;
+				}
+			}
+		}		
+		.content-area {
+			.wrap;
+			width: 100%;
+			float: none;
+			display: block;
+			margin-right: auto!important;
+		}
+		.news_prescott,
+		.news_recovery {
+			.column(6);
+			
+			h2 {}
+		}
+		.news_recovery {
+			margin-right: 0;
 		}
 	}
-	.advert-section {
-		.column(2);
-		margin-right: 0px;
-		.min-height(650px);
-		
-		.advert {
-			text-align: center;
+}
+
+/** Breakpoint - 1000 **/
+@media only screen and (min-width: 1000px) {
+	.home {
+		.call_to_action {
+			.height(450px);
 			
-			iframe {
-				.height(600px);
+			.call_to_action_text {
+				.padding-top(120px);
+				
+				h1 {}
+				h2 {					
+					a {						
+						&:hover {}
+					}
+				}
+			}
+		}	
+		.content-area {
+			padding: 0;
+		}
+		.news_prescott,
+		.news_recovery {
+			.column(5);
+			
+			h2 {}
+		}
+		.advert-section {
+			.column(2);
+			margin-right: 0px;
+			.min-height(650px);
+			
+			.advert {
+				text-align: center;
+				
+				iframe {
+					.height(600px);
+				}
 			}
 		}
 	}

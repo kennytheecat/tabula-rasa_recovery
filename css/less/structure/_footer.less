@@ -5,6 +5,7 @@ footer#colophon .site-footer
 .site-footer {
 	clear: both;
 	background: @prim-color;
+	.padding(10px);
 	
 	.inner-footer {
 		.wrap;
@@ -82,5 +83,12 @@ footer#colophon .site-footer
 				}
 			}
 		}
+	}
+}
+
+/** Breakpoint - 1000 **/
+@media only screen and (min-width: 1000px) {
+	.site-content {
+		padding: 0;
 	}
 }
