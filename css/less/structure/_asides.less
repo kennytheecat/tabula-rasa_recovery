@@ -31,4 +31,21 @@
 	#s {
 	width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
 	}
+	.sidebar_advert {
+		display: none;	
+	}
 }
+
+
+/** Breakpoint - 768 **/
+@media only screen and (min-width: 768px) {
+	.widget-area .sidebar_advert {
+		display: inline-block;
+		.min-height(650px);
+		text-align: center;
+			
+		iframe {
+			.height(600px);
+		}
+	}	
+}		

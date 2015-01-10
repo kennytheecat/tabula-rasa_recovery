@@ -1,38 +1,13 @@
 <?php
-$post_id;
+//$post_id;
 $post_id = $post->ID;
 $values = get_post_meta( $post_id );
 $post_type = get_post_type();
-/*
-if ( 'rvparks' == $post_type ) {
-	$field_value = 'park';
-	$post_type_name = 'RV Park';
-	$listing_slug = 'rv-parks';
-	$listing_slug_name = 'RV Parks';
-}
-if ( 'rvdumps' == $post_type ) {
-	$field_value = 'dump';
-	$post_type_name = 'RV Dump';
-	$listing_slug = 'rv-dumps';
-	$listing_slug_name = 'RV Dumps';
-}
-if ( 'rvboons' == $post_type ) {
-	$field_value = 'boon';
-	$post_type_name = 'RV Boondock';
-	$listing_slug = 'rv-boondocks';
-	$listing_slug_name = 'RV Boondocks';
-}
-$status = $values['park_status'][0];
-*/
 
 /* Basic Info Section
 *******************************/
 $name = get_the_title();
-/*
-$boon_types = wp_get_object_terms( $post_id, 'boons' );
-$boon_type = $boon_types[0]->slug;
-$boon_type_name = $boon_types[0]->name;
-*/
+
 $address = $values['prc_address'][0];
 $email = $values['prc_email'][0];					
 $web = $values['prc_website'][0];
@@ -46,14 +21,15 @@ $lat = $values['prc_lat'][0];
 $lng = $values['prc_lng'][0];
 
 
-$basic_info .= '
+$rehab_heading = '
 <h1 itemprop="name">' . $name . '</h1>
 <address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 	<p>
 		<span itemprop="streetAddress">' . $address . '</span><br />';		
-	$basic_info .= '	
+	$rehab_heading .= '	
 	</p>
 </address>';
+
 $basic_info .= '<p>';
 if ( $email != '') {
 	$basic_info .= '<a href="mailto:' . $email . 'subject=Inquiry%20via%20PrescottRecoveryCenters.com">Email this Treatment Center</a><br />';
@@ -81,34 +57,9 @@ if ( $contact_number != '') {
 }
 $basic_info .= '</p>';
 
+/* Map Section */
 $marker_html = '<p>' . esc_attr(  $name ) . '<br />' . esc_attr( $address ) . '<br />' . esc_attr( $city ) . ', ' . $state_abr . '<br />Driving directions: <br /><a href="http://maps.google.com/maps?daddr=' . $lat . ',' . $lng . '" target="_blank">To here</a>|<a href="http://maps.google.com/maps?saddr=' . $lat . ',' . $lng . '" target="_blank">From here</a></p>';
 $markers[] = "var point = new google.maps.LatLng($lat,$lng); var marker = createMarker(point,'$marker_html')";
-
-if ( 'rvparks' == $post_type ) {				
-	/* Ratings Section
-	*******************************/
-	$ratings = unserialize($values['park_vote_fields'][0]);
-	$vote_tally = $ratings[0];
-	$vote_avg = $ratings[1];
-	$ratings_section = '
-	<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-	 <span class="ratings_name">' . $name . '</span><br />
-		<div id="ratings">' .
-			get_star_rating($vote_avg, 'large') . '
-		</div>
-		<br />
-		<span class="rating">
-		<meta itemprop="ratingValue" content="' . $vote_avg . '">' . $vote_avg . ' out of 5
-		</span>
-		based on
-	 <span itemprop="reviewCount">' . $vote_tally . '</span> ratings.
-	</div>
-	<div class="review_button" >
-		<a href="#review_box"> Read Reviews for this RV Park</a>
-	</div>
-	<div id="facebook_badge">
-	</div>';
-}
 
 /* Google Ad
 *******************************/
@@ -125,6 +76,7 @@ $google_advert = '
 </script>
 </div>';
 
+/* Details List */
 $residential_options = details_list ( $post_id, 'residential_options' );
 $treatment_services = details_list ( $post_id, 'treatment_services' );
 $treatment_methods = details_list ( $post_id, 'treatment_methods' );	

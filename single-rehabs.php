@@ -11,33 +11,24 @@ get_header();
 		if (have_posts()) : while (have_posts()) : the_post(); 
 		require_once('inc/rehabs/rehab-functions.php');
 		?>
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">	
-			<div class="listing_nav">
-				<?php echo $listing_nav; ?>
-			</div>			
-			<!-- BASIC INFORMATION -->
-			<div class="basicinfo" itemscope itemtype="http://schema.org/LocalBusiness">
-				<?php echo $basic_info; ?>
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">			
+			<!-- Rehah Heading -->
+			<div class="rehab_heading" itemscope itemtype="http://schema.org/LocalBusiness">
+				<?php echo $rehab_heading; ?>
 			</div>
+			
+			<!-- BASIC INFORMATION -->
+			<div class="basicinfo">
+				<?php echo $basic_info; ?>
+			</div>			
+			<!-- Descriptions -->			
 			<div class="philosophy">
 				<?php the_content(); ?>			
-			</div>
-			<!-- PHOTO GALLERY OR AD -->
-			<div class="google_advert">
-				<?php echo $google_advert; ?>
-			</div>
-			<!-- MAP -->
-			<div id="rvpark_gmap_wrapper">
-				<?php
-				echo '<div id="map" style="height: 250px; width: 610px;">';
-				include('inc/maps/map.php');
-				echo '</div>';
-				?>
 			</div>
 			
 			<!-- DETAILS LIST -->
 			<div class="details_wrap" class="top_background">
-			
+
 				<!-- Rehab Treatment Details -->
 				<div class="treatment_details">
 					<?php 
@@ -70,13 +61,10 @@ get_header();
 					</div>
 				</div>
 			</div> <!-- end .details_wrap -->		
-			<hr />
-			
-			<!-- REVIEWS -->
-			<div id="review_box">	
-				<h2>Reviews for <?php echo $name; ?></h2>
-				<?php comments_template( '/comments-rvparks.php' ); ?>
-			</div>		
+			<!-- Google AD -->
+			<div class="google_advert">
+				<?php echo $google_advert; ?>
+			</div>	
 		</article>
 	<?php endwhile; else: ?>
 	<p>Sorry, no posts matched your criteria.</p>

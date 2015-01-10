@@ -45,6 +45,7 @@ body
 	background: @white;
 	
 	.content-area {
+		.padding(10px);
 	
 		.site-main {
 			word-wrap: break-word;
@@ -92,5 +93,13 @@ body
 	}
 	.site-footer {
 		clear: both;
+	}
+}
+
+/** Breakpoint - 600 **/
+@media only screen and (min-width: 600px) {
+
+	.content-area {
+		padding: 0;
 	}
 }

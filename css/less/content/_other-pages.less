@@ -210,37 +210,75 @@
 	.content-area {
 		width: 100%;
 	}
-	.basicinfo {
-		.column(4);
-		margin-left: 0;
-	}
-	.philosophy {
-		.column(8);
-		margin-right: 0;
-	}
-	.google_advert {
-		.column(4);
-		margin-left: 0;
-		clear: both;
-	}
-	.rvpark_gmap_wrapper {
-		.column(8);
-		margin-right: 0;
-	}
-	.details_wrap {
-		.treatment_details {
-			.column(8);
-			margin-left: 0;
-			clear: both;
-		}
-		.payment_details {
-			.column(4);
-			margin-right: 0;		
-		}
-	}
-	#review_box { display: none;}
+	.rehab_heading{}
+	.basicinfo {}
+	.google_advert {}
+	.philosophy {}
 }
 
+/** Breakpoint - 600 **/
+@media only screen and (min-width: 600px) {
+	.single-rehabs {
+		.rehab_heading {
+			h1 {
+				display: inline-block;
+			}
+			address {
+				display: inline-block;
+				.margin-left(20px);
+			}
+		}
+		.basicinfo {
+			clear: both;
+			.column(4);
+			margin-left: 0;
+		}	
+		.philosophy {
+			.column(8);
+			margin-right: 0;
+		}
+		.details_wrap {
+			.column(8);
+			margin-left: 0;
+			clear: both;		
+			.treatment_details {
+				.residential_options {
+					.column(6);
+					margin-left: 0;
+				}
+				.treatment_services {
+					.column(6);
+					margin-right: 0;
+				}
+				.treatment_methods {
+					.column(6);
+					margin-left: 0;
+					clear: both;
+				}
+				.client_types {
+					.column(6);
+					margin-right: 0;
+				}
+			}
+			.payment_details {
+				.column(8);
+				margin-leftt: 0;		
+				
+				.payment_forms {}
+				.insurance_plans {}
+			}
+			.google_advert {
+				.column(4);
+				text-align: center;
+				margin-left: 0;
+				
+				iframe {
+					.height(250px);
+				}
+			}				
+		}
+	}
+}
 /** Rehabs - Archive
 -------------------------------------------------------------- */
 .page-template-page-compare-php {
@@ -255,19 +293,42 @@
 		.margin-top(15px);
 		.padding(10px);
 	}
-	.entry-header {
-		.column(3);
-		margin-left: 0;
-	}
-	.philosophy {
-		.column(6);
-	}
+	.entry-header {}
+	.philosophy {}
 	.residential_options_section {
-		.column(3);
-		margin-right: 0;
+		ul {
+			.padding-left(20px);
+		}
 	}	
 }
 
+/** Breakpoint - 600 **/
+@media only screen and (min-width: 600px) {
+	.page-template-page-compare-php {
+		.content-area {
+			width: 100%;
+		}
+		article {
+			clear: both;
+			border: 1px solid #ddd;
+			.border-radius(5px);
+			overflow: hidden;
+			.margin-top(15px);
+			.padding(10px);
+		}
+		.entry-header {
+			.column(3);
+			margin-left: 0;
+		}
+		.philosophy {
+			.column(6);
+		}
+		.residential_options_section {
+			.column(3);
+			margin-right: 0;
+		}	
+	}
+}
 	
 /** 404
 -------------------------------------------------------------- */

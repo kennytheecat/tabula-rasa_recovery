@@ -16,4 +16,7 @@
 			</aside>
 			
 		<?php endif; // end sidebar widget area ?>
+		<div class="sidebar_advert">
+			<?php echo $ad_sidebar; ?>
+		</div>
 	</div><!-- #secondary -->
