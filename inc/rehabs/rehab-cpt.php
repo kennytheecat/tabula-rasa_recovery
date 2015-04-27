@@ -358,4 +358,28 @@ function prc_payments_metaboxes( $meta_boxes ) {
 	return $meta_boxes;
 }
 add_filter( 'cmb_meta_boxes', 'prc_payments_metaboxes' );
+
+/** External Link for Post
+-------------------------------------------------------------- */
+function external_link( $meta_boxes ) {
+	$prefix = 'prc_'; // Prefix for all fields
+	$meta_boxes[] = array(
+		'id' => 'prc_external Link',
+		'title' => 'External Link',
+		'pages'      => array( 'post', ), // Post type
+		'context' => 'normal',
+		'priority' => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields' => array(
+			array(
+				'name'    => 'External Link',
+				'desc'    => '',
+				'id'      => $prefix . 'external_link',
+				'type' => 'text_url',
+			),
+		),
+	);
+	return $meta_boxes;
+}
+add_filter( 'cmb_meta_boxes', 'external_link' );
 ?>

@@ -121,7 +121,7 @@ require_once('rehabs/rehab-cpt.php');
 
 /** Meta Boxes
 **************************************************************/
-//require_once('metabox/metabox-functions.php'); 
+require_once('metabox/metabox-functions.php'); 
 
 function post_formats() {
 	// adding post format support

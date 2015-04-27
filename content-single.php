@@ -14,6 +14,12 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
+		<?php 
+		$ex_link = get_post_meta($post->ID, 'prc_external_link', true );
+		if ( $ex_link ) { 
+		?>
+		<p class="external_link"><a href="<?php echo $ex_link; ?>" target="_blank">Read the rest of the article...</a></p>
+		<?php } ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'tabula-rasa' ),

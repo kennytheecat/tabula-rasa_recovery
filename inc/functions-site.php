@@ -44,4 +44,3 @@ $ad_sidebar = '
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>';
 ?>
-
