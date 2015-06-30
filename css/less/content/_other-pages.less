@@ -237,10 +237,46 @@
 			.column(8);
 			margin-right: 0;
 		}
+		.recovery-articles {
+			width: 100%;
+			display: block;
+			
+			.excerpt-read-more {
+				color: @white;
+			}
+
+			
+			article {
+				width: 100%;
+				display: block;
+				overflow: hidden;
+				.padding(10px);
+				background: @prim-color;				
+			}
+			
+				
+			.entry-title {
+				display: inline-block;
+				margin: 0;
+				
+				a {
+					color: @white;
+				}
+			}
+			.entry-thumbnail {
+				.column(3);
+				margin-left: 0;
+			}
+			p {
+				.column(9);
+				margin-right: 0;
+			}
+		} //recovery-articles
 		.details_wrap {
 			.column(8);
 			margin-left: 0;
-			clear: both;		
+			clear: both;	
+			
 			.treatment_details {
 				.residential_options {
 					.column(6);
@@ -266,24 +302,28 @@
 				
 				.payment_forms {}
 				.insurance_plans {}
+			}			
+		} //details_wrap
+		.google_advert {
+			.column(4);
+			text-align: center;
+			margin-left: 0;
+			.margin-top(50px); 
+			
+			iframe {
+				.height(250px);
 			}
-			.google_advert {
-				.column(4);
-				text-align: center;
-				margin-left: 0;
-				
-				iframe {
-					.height(250px);
-				}
-			}				
-		}
-	}
+		} //google_advert			
+	} //single-rehabs
 }
 /** Rehabs - Archive
 -------------------------------------------------------------- */
 .page-template-page-compare-php {
 	.content-area {
 		width: 100%;
+	}
+	.aside-articles {
+		dislpay: none;
 	}
 	article {
 		clear: both;
@@ -293,6 +333,7 @@
 		.margin-top(15px);
 		.padding(10px);
 	}
+	.aside-articles
 	.entry-header {}
 	.philosophy {}
 	.residential_options_section {
@@ -300,13 +341,31 @@
 			.padding-left(20px);
 		}
 	}	
+	.aside-articles { 
+		display: none;
+		article {
+			border: none;
+			padding: none;
+			
+			.entry-thumbnail {
+				clear: both;
+			}
+		}
+	}
 }
 
 /** Breakpoint - 600 **/
 @media only screen and (min-width: 600px) {
 	.page-template-page-compare-php {
 		.content-area {
-			width: 100%;
+			.column(9);
+			margin-left: 0;
+		}
+		.aside-articles {
+			.column(3);
+			margin-right: 0;
+			margin: 0;
+			padding: 0;
 		}
 		article {
 			clear: both;
@@ -317,16 +376,27 @@
 			.padding(10px);
 		}
 		.entry-header {
-			.column(3);
+			.column(4);
 			margin-left: 0;
 		}
 		.philosophy {
-			.column(6);
+			.column(4);
 		}
 		.residential_options_section {
-			.column(3);
+			.column(4);
 			margin-right: 0;
-		}	
+		}
+		.aside-articles {
+			article {
+				padding: 0;
+			}
+			.entry-header {
+				width: 100%; 
+			}
+			.entry-title {
+				.font-size(18px);
+			}
+		}
 	}
 }
 	

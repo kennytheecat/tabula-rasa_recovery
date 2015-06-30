@@ -26,6 +26,29 @@ get_header();
 				<?php the_content(); ?>			
 			</div>
 			
+			<div class="recovery-articles">
+			<?php //while ( have_posts() ) : the_post(); 
+				$args = array(
+					'posts_per_page' => 1,
+					'post_type' => 'post',
+					'orderby' => 'rand'
+				);
+				$query = new WP_Query( $args  );
+				while( $query->have_posts() ):
+				$query->the_post();
+				$post_id = $post->ID;
+			?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php if ( has_post_thumbnail() ) : ?>
+						<div class="entry-thumbnail">
+							<?php the_post_thumbnail('compare'); ?>
+						</div>
+						<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+						<?php the_excerpt(); ?> 
+						<?php endif; ?>					
+				</article><!-- #post -->
+			<?php endwhile; // end of the loop. ?>			
+			</div>
 			<!-- DETAILS LIST -->
 			<div class="details_wrap" class="top_background">
 

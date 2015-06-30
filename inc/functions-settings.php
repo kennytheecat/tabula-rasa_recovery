@@ -157,6 +157,8 @@ add_filter('excerpt_more', 'tr_excerpt_more');
 function tr_excerpt_length( $length ) {
 	if (  is_home() || is_archive() ) {
 		return 48;	
+	} elseif ( is_page_template('page-compare.php') ){
+		return 20;
 	} else {
 		return 55;
 	}
