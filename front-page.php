@@ -21,7 +21,11 @@ get_header();
 			<div class="news_prescott">
 				<h2>Recent Recovery News in Prescott</h2>
 				<?php 
-				$prescott_news = new WP_Query('category_name=prescott-recovery'); // exclude category 9 103
+				$args = array(
+					'posts_per_page' => '2',
+					'category_name'   => 'prescott-recovery'
+				);				
+				$prescott_news = new WP_Query( $args ); // exclude category 9 103
 				while($prescott_news->have_posts()) : $prescott_news->the_post(); 
 				?>
 				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -37,7 +41,11 @@ get_header();
 			<div class="news_recovery">
 				<h2>Recent Recovery News</h2>
 				<?php 
-				$recent_recovery = new WP_Query('category_name=recovery'); // exclude category 9 109
+				$args = array(
+					'posts_per_page' => '2',
+					'category_name'   => 'recovery'
+				);
+				$recent_recovery = new WP_Query( $args ); // exclude category 9 109
 				while($recent_recovery->have_posts()) : $recent_recovery->the_post(); 
 				?>
 				<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
